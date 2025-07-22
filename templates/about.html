@@ -1,0 +1,239 @@
+{% extends "users/basic.html" %}
+{% block content %}
+
+<div class="container mt-5 mb-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 text-danger"><i class="fas fa-film"></i> About BookMySeat</h1>
+    <p class="lead">Your ultimate destination for movies, events, and entertainment across India.</p>
+  </div>
+
+  <!--  Our Vision, Mission, Team -->
+  <div class="row text-center mb-5">
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-bullseye fa-3x text-danger mb-2"></i>
+      <h4>Our Mission</h4>
+      <p>To simplify the ticket booking process and bring entertainment closer to everyone with one click.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-users fa-3x text-danger mb-2"></i>
+      <h4>Our Team</h4>
+      <p>A passionate group of developers, designers & cinema lovers making digital entertainment seamless.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-star fa-3x text-danger mb-2"></i>
+      <h4>What We Offer</h4>
+      <p>From movies, concerts, plays to sports and comedy shows – experience everything in one place.</p>
+    </div>
+  </div>
+
+  <!--  Platform Stats -->
+  <div class="row text-center mb-5">
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm p-3">
+        <h2 class="text-danger"><i class="fas fa-ticket-alt"></i> 10M+</h2>
+        <p>Tickets Booked</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm p-3">
+        <h2 class="text-danger"><i class="fas fa-theater-masks"></i> 5K+</h2>
+        <p>Events Hosted</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm p-3">
+        <h2 class="text-danger"><i class="fas fa-map-marked-alt"></i> 100+</h2>
+        <p>Cities Served</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm p-3">
+        <h2 class="text-danger"><i class="fas fa-user-check"></i> 50L+</h2>
+        <p>Happy Users</p>
+      </div>
+    </div>
+  </div>
+
+  <!--  Our Journey Timeline -->
+  <div class="mb-5">
+    <h3 class="text-center text-danger mb-4"><i class="fas fa-road"></i> Our Journey</h3>
+    <ul class="timeline pl-4">
+      <li><strong>2021:</strong> Idea born during a late-night movie show struggle. </li>
+      <li><strong>2022:</strong> First prototype launched — got 1K+ users in first month!</li>
+      <li><strong>2023:</strong> Expanded to 50+ cities, partnered with top theaters and organizers.</li>
+      <li><strong>2024:</strong> Introduced sports, comedy, concerts and secured 1M+ bookings.</li>
+      <li><strong>2025:</strong> Moving towards AI-powered recommendations & real-time seat tracking.</li>
+    </ul>
+  </div>
+
+  <!--  Why Choose Us -->
+  <div class="mb-5">
+    <h3 class="text-center text-danger mb-4"><i class="fas fa-thumbs-up"></i> Why Choose BookMySeat?</h3>
+    <div class="row text-center">
+      <div class="col-md-3 mb-3">
+        <i class="fas fa-mobile-alt fa-2x text-danger mb-2"></i>
+        <h5>Easy Booking</h5>
+        <p>Book in seconds, no hassle — anytime, anywhere.</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <i class="fas fa-shield-alt fa-2x text-danger mb-2"></i>
+        <h5>Secure Payments</h5>
+        <p>100% safe with all major UPI & card options.</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <i class="fas fa-headset fa-2x text-danger mb-2"></i>
+        <h5>24x7 Support</h5>
+        <p>Got a problem? We’re always just one call away.</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <i class="fas fa-tags fa-2x text-danger mb-2"></i>
+        <h5>Best Deals</h5>
+        <p>Offers, coupons & cashback always available!</p>
+      </div>
+    </div>
+  </div>
+
+  <!--  Call to Action -->
+  <div class="text-center mt-4">
+    <h4 class="mb-3">Ready to experience the magic of movies?</h4>
+    <a href="{% url 'movie_list' %}" class="btn btn-danger btn-lg">
+      <i class="fas fa-ticket-alt"></i> Book Your Seat Now
+    </a>
+  </div>
+</div>
+
+
+
+<div class="container mt-5 mb-5">
+  <!--  Our Vision, Mission, Team -->
+  <div class="row text-center mb-5">
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-bullseye fa-3x text-danger mb-2"></i>
+      <h4>Our Mission</h4>
+      <p>To simplify the ticket booking process and bring entertainment closer to everyone with one click.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-users fa-3x text-danger mb-2"></i>
+      <h4>Our Team</h4>
+      <p>A passionate group of developers, designers & cinema lovers making digital entertainment seamless.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <i class="fas fa-star fa-3x text-danger mb-2"></i>
+      <h4>What We Offer</h4>
+      <p>From movies, concerts, plays to sports and comedy shows – experience everything in one place.</p>
+    </div>
+  </div>
+
+
+  <!--  Timeline -->
+  <div class="mb-5">
+    <h3 class="text-center text-danger mb-4">
+      <i class="fas fa-road"></i> Our Journey
+    </h3>
+    <ul class="timeline pl-4 list-unstyled">
+      <li class="mb-3">
+        <strong>2021:</strong> Idea sparked after a late-night show chaos
+        <i class="fas fa-film text-muted ms-1"></i>
+      </li>
+      <li class="mb-3">
+        <strong>2022:</strong> Prototype launched – 1K+ users in 30 days
+        <i class="fas fa-rocket text-muted ms-1"></i>
+      </li>
+      <li class="mb-3">
+        <strong>2023:</strong> Partnered with top theaters across India
+        <i class="fas fa-handshake text-muted ms-1"></i>
+      </li>
+      <li class="mb-3">
+        <strong>2024:</strong> Added sports and live shows to platform
+        <i class="fas fa-futbol text-muted me-1"></i><i class="fas fa-theater-masks text-muted"></i>
+      </li>
+      <li class="mb-3">
+        <strong>2025:</strong> AI seat-suggestions & real-time tracking coming soon
+        <i class="fas fa-robot text-muted ms-1"></i>
+      </li>
+    </ul>
+  </div>
+
+
+  <!--  TEAM CAROUSEL -->
+  <h3 class="text-center text-danger mb-4"><i class="fas fa-user-friends"></i> Meet Our Team</h3>
+  <div id="teamCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner text-center">
+      <div class="carousel-item active">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mb-3" width="100">
+        <h5>Tushar Gupta</h5>
+        <p class="text-muted">Founder & Lead Developer</p>
+      </div>
+      <div class="carousel-item">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mb-3" width="100">
+        <h5>Riya Sharma</h5>
+        <p class="text-muted">UI/UX Designer</p>
+      </div>
+      <div class="carousel-item">
+        <img src="https://randomuser.me/api/portraits/men/18.jpg" class="rounded-circle mb-3" width="100">
+        <h5>Aman Mehra</h5>
+        <p class="text-muted">Marketing Head</p>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#teamCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#teamCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+  <!--  TESTIMONIALS -->
+  <h3 class="text-center text-danger mb-4"><i class="fas fa-comment-alt"></i> What Our Users Say</h3>
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <p>“Amazing app! Got front row seats in seconds. Highly recommend.”</p>
+        <h6 class="text-end">– Anjali, Pune</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <p>“No more long queues. Just click and go. Love it.”</p>
+        <h6 class="text-end">– Rahul, Delhi</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <p>“Live events, fast booking, great support. My go-to app.”</p>
+        <h6 class="text-end">– Neha, Bangalore</h6>
+      </div>
+    </div>
+  </div>
+
+  <!--  CTA -->
+  <div class="text-center mt-4">
+    <h4 class="mb-3">Join millions who love BookMySeat.</h4>
+    <a href="{% url 'movie_list' %}" class="btn btn-danger btn-lg"><i class="fas fa-ticket-alt"></i> Book Now</a>
+  </div>
+</div>
+
+<div class="position-relative mb-5">
+  <video autoplay muted loop class="w-100" style="max-height: 400px; object-fit: cover;">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+  </video>
+
+</div>
+<style>
+  .timeline li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .timeline li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .carousel-item img {
+    max-height: 120px;
+    object-fit: cover;
+  }
+</style>
+
+{% endblock %}

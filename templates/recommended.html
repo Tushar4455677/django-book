@@ -1,0 +1,42 @@
+{% extends "users/basic.html" %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-2 text-primary fw-bold display-6">
+    <i class="fas fa-magic me-2"></i> Your Movie Recommendations
+  </h2>
+  <p class="text-center text-muted mb-4">
+    These are personalized suggestions based on your past bookings
+  </p>
+
+  {% if movies %}
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    {% for movie in movies %}
+    {% if movie.id not in booked_movies %}
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.name }}"
+          style="height: 300px; object-fit: cover;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold">{{ movie.name }}</h5>
+          <p class="card-text mb-2">
+            <i class="fas fa-language text-secondary me-1"></i>
+            <strong>{{ movie.language }}</strong><br>
+            <i class="fas fa-film text-secondary me-1 mt-2"></i>
+            {% for g in movie.genre.all %}
+            <span class="badge bg-primary me-1">{{ g.name }}</span>
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-center text-secondary mt-5 fs-5">
+    No recommendations found. Book some movies to get personalized suggestions!
+  </p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "users/basic.html" %}
+{% block content %}
+
+<style>
+  .seat-label {
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .seat-checkbox {
+    display: none;
+  }
+
+  .seat-checkbox:checked+.seat-content {
+    background-color: #ffc107 !important;
+    color: black !important;
+  }
+
+  .seat-content {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+  }
+
+  .seat-content:hover {
+    transform: scale(1.05);
+  }
+
+  .legend-box {
+    min-width: 100px;
+    text-align: center;
+  }
+</style>
+
+<div class="container mt-4">
+  <h3 class="text-danger mb-4">
+    Select Seats for <span class="text-dark">{{ theater.movie.name }}</span>
+    at <span class="text-dark">{{ theater.name }}</span>
+  </h3>
+
+  {% if error %}
+  <div class="alert alert-danger">{{ error }}</div>
+  {% endif %}
+
+  <form method="POST">
+    {% csrf_token %}
+
+    <!-- Seat Grid -->
+    <div class="d-flex flex-wrap mb-4" style="gap: 12px;">
+      {% for seat in seats %}
+      <div class="seat-box" style="width: 90px;">
+        {% if seat.is_booked %}
+        <div class="bg-danger text-white seat-content">
+          Seat {{ seat.seat_number }}<br><small>Booked</small>
+        </div>
+        {% else %}
+        <label class="seat-label d-block">
+          <input type="checkbox" name="seats" value="{{ seat.id }}" class="seat-checkbox">
+          <div class="bg-success text-white seat-content">
+            Seat {{ seat.seat_number }}<br><small>Available</small>
+          </div>
+        </label>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-danger btn-lg"> <i class="fas fa-ticket-alt"></i> Book Selected Seats</button>
+  </form>
+
+  <!-- Legend -->
+  <div class="mt-5">
+    <h6>Legend:</h6>
+    <div class="d-flex gap-3 flex-wrap">
+      <div class="legend-box bg-success text-white px-3 py-2 rounded">Available</div>
+      <div class="legend-box bg-warning text-dark px-3 py-2 rounded">Selected</div>
+      <div class="legend-box bg-danger text-white px-3 py-2 rounded">Booked</div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

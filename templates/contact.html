@@ -1,0 +1,138 @@
+{% extends "users/basic.html" %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+  <!-- Heading -->
+  <h2 class="text-center text-danger mb-4">
+    <i class="fas fa-envelope-open-text"></i> Contact Us
+  </h2>
+
+  <!-- Success Messages -->
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  <div class="row">
+    <!-- Google Map -->
+    <div class="col-lg-6 mb-4">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160981904!2d72.74109958761622!3d19.082197839315284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63ff725aebf%3A0x23f1edbe72f74c25!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1719427078883!5m2!1sen!2sin"
+        width="100%" height="530" style="border:0; border-radius: 10px;" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-lg-6 mb-4">
+      <div class="card shadow-lg p-4">
+        <h5 class="text-danger mb-3">
+          <i class="fas fa-paper-plane"></i> Send Us a Message
+        </h5>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label class="form-label">
+              <i class="fas fa-user"></i> Name
+            </label>
+            <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">
+              <i class="fas fa-envelope"></i> Email
+            </label>
+            <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">
+              <i class="fas fa-comment-dots"></i> Message
+            </label>
+            <textarea class="form-control" name="message" rows="4" placeholder="Type your message here..."
+              required></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">
+              <i class="fas fa-star text-warning"></i> Rate Your Experience
+            </label>
+            <select class="form-select" name="rating">
+              <option value="">Select Rating</option>
+              <option>5 - Excellent</option>
+              <option>4 - Good</option>
+              <option>3 - Average</option>
+              <option>2 - Poor</option>
+              <option>1 - Very Poor</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label class="form-label">
+              <i class="fas fa-paperclip"></i> Attach a Screenshot (optional)
+            </label>
+            <input type="file" class="form-control" name="attachment">
+          </div>
+          <button type="submit" class="btn btn-danger w-100">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Info Cards -->
+  <div class="row mt-5">
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm p-3 text-center h-100">
+        <i class="fas fa-map-marker-alt fa-2x text-danger mb-2"></i>
+        <h5>Office Address</h5>
+        <p>123, BookMySeat HQ<br>Mumbai, Maharashtra - 400001</p>
+        <hr>
+        <h6><i class="fas fa-clock text-danger"></i> Working Hours</h6>
+        <p>Mon - Sat: 9:00 AM - 8:00 PM<br>Sunday: Closed</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm p-3 text-center h-100">
+        <i class="fas fa-phone-alt fa-2x text-danger mb-2"></i>
+        <h5>Call Us</h5>
+        <p>+91 98765 43210<br>+91 90210 56789</p>
+        <hr>
+        <h6><i class="fab fa-whatsapp text-success"></i> WhatsApp</h6>
+        <p>Chat live at +91 99999 88888</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm p-3 text-center h-100">
+        <i class="fas fa-envelope fa-2x text-danger mb-2"></i>
+        <h5>Email</h5>
+        <p>support@bookmyseat.com</p>
+        <hr>
+        <h6><i class="fas fa-share-alt text-danger"></i> Follow Us</h6>
+        <p>
+          <a href="#" class="text-dark me-2"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#" class="text-dark me-2"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="text-dark me-2"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-dark"><i class="fab fa-youtube fa-lg"></i></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nearby Office Search UI (Coming Soon) -->
+  <div class="mt-5">
+    <h4 class="text-center text-danger mb-4">
+      <i class="fas fa-search-location"></i> Find Nearest Office
+    </h4>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Enter your city or pincode">
+      <button class="btn btn-outline-danger" type="button">Search</button>
+    </div>
+    <small class="form-text text-muted text-center mt-2">
+      Coming soon: Real-time location-based office locator!
+    </small>
+  </div>
+</div>
+{% endblock %}
