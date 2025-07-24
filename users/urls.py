@@ -8,9 +8,9 @@ urlpatterns = [
     path('register/', register, name='register'),  # User registration page
     path('profile/', profile, name='profile'),  # User profile page
     path('change_password/', reset_password, name='change_password'),# Custom password change view
-    path('createadmin/', create_superuser),
+   
 
-    path('users/createadmin/', views.create_superuser, name='create_superuser'),
+       path('createadmin/', create_superuser, name='create_superuser'),
 
 
     # Logout view using Django's built-in LogoutView
