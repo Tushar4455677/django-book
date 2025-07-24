@@ -4,7 +4,7 @@ from .views import register, login_view, profile, reset_password, home  # Import
 from django.contrib.auth import views as auth_views  # Importing Django's built-in auth views with alias
 
 urlpatterns = [
-    path('/home', home, name='home'),  # Home page 
+    path('', home, name='home'),  # Home page 
     path('register/', register, name='register'),  # User registration page
     path('profile/', profile, name='profile'),  # User profile page
     path('change_password/', reset_password, name='change_password'),  # Custom password change view
