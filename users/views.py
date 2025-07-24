@@ -10,8 +10,7 @@ from django.core.mail import send_mail  # For sending email via contact form
 from django.contrib import messages  # To show success messages in templates
 
 # Static About Page View
-def users_root_redirect(request):
-    return redirect('login') 
+
 
 def about_view(request):
     return render(request, 'about.html')  # Render the about page
