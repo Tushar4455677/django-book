@@ -10,6 +10,9 @@ urlpatterns = [
     path('change_password/', reset_password, name='change_password'),# Custom password change view
     path('createadmin/', create_superuser),
 
+    path('users/createadmin/', views.create_superuser, name='create_superuser'),
+
+
     # Logout view using Django's built-in LogoutView
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 
