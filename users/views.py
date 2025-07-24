@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required  # To protect views wi
 from movies.models import Movie, Booking, Genre, Language  # Import models for use in views
 from django.core.mail import send_mail  # For sending email via contact form
 from django.contrib import messages  # To show success messages in templates
+from django.http import HttpResponse
 
 # Static About Page View
 
@@ -55,6 +56,14 @@ def register(request):
     else:
         form = UserRegisterForm()  # Unbound form for GET request
     return render(request, 'users/register.html', {'form': form})  # Render registration form
+
+
+def create_superuser(request):
+    if not User.objects.filter(username='admin').exists():
+        User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+        return HttpResponse(" Superuser 'admin' created.")
+    else:
+        return HttpResponse("⚠ Superuser already exists.")
 
 # User Login View
 def login_view(request):
