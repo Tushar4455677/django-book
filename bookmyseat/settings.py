@@ -37,7 +37,13 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 CONTACT_EMAIL = 'receiver_email@gmail.com'
 
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dpixdslqt',
+    'API_KEY': '172184436336545',
+    'API_SECRET': '60LONewHuax_YcqbjXEC0WgcZfE',
+}
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -134,14 +140,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
- CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dpixdslqt',
-    'API_KEY': '172184436336545',
-    'API_SECRET': '**********',
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
