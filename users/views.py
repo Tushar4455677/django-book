@@ -9,6 +9,8 @@ from movies.models import Movie, Booking, Genre, Language  # Import models for u
 from django.core.mail import send_mail  # For sending email via contact form
 from django.contrib import messages  # To show success messages in templates
 from django.http import HttpResponse
+from django.contrib.auth.models import User
+
 
 # Static About Page View
 
